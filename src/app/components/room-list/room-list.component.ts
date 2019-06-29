@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Room } from '@app/models';
+import { ApiService } from '@app/services';
 
 @Component({
   selector: 'app-room-list',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./room-list.component.css']
 })
 export class RoomListComponent implements OnInit {
+  rooms: Room[]
+  selectedId: number
 
-  constructor() { }
+  constructor(private readonly api: ApiService) { }
 
   ngOnInit() {
+    this.api.getRooms()
+      .subscribe((rooms: Room[]) => {
+        this.rooms = rooms
+      })
   }
 
 }

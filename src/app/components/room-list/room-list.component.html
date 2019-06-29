@@ -1,3 +1,12 @@
-<p>
-  room-list works!
-</p>
+<section class="container">
+  <header class="header"></header>
+  <section class="main">
+    <div *ngFor="let room of rooms">
+      <article class="room">
+        <img src="" alt="">
+        <div class="room-description">{{ room.Name }}</div>
+      </article>
+      <div class="preview" *ngIf="room.id === selectedId">I'm selected</div>
+    </div>
+  </section>
+</section>

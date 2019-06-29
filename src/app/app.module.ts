@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module'
 import { NavComponent, LoginComponent, AppComponent } from './components';
 import { HomeComponent } from './components/home/home.component'
-import { TodoService, AuthService } from './services';
+import { TodoService, AuthService, ApiService } from './services';
 import { JWTInterceptor } from './helpers/jwt.interceptor';
 import { SeedService } from './services/seed.service';
 import { RoomListComponent } from './components/room-list/room-list.component';
@@ -30,7 +30,8 @@ import { RoomListComponent } from './components/room-list/room-list.component';
     { provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true },
     TodoService,
     AuthService,
-    SeedService
+    SeedService,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })
