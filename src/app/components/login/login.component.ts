@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
   }
 
   seedData(): void {
-    this.seed.seed()
+    this.seed.seedUsers()
       .subscribe()
   }
 }
