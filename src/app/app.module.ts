@@ -9,13 +9,15 @@ import { HomeComponent } from './components/home/home.component'
 import { TodoService, AuthService } from './services';
 import { JWTInterceptor } from './helpers/jwt.interceptor';
 import { SeedService } from './services/seed.service';
+import { RoomListComponent } from './components/room-list/room-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RoomListComponent
   ],
   imports: [
     BrowserModule,
