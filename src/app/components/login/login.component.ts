@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AuthService } from '@app/services';
+import { SeedService } from '@app/services/seed.service';
 
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private auth: AuthService
+    private auth: AuthService,
+    private seed: SeedService
   ) {
     // redirect to home if already logged in
     if (this.auth.currentUserValue) {
@@ -57,5 +59,10 @@ export class LoginComponent implements OnInit {
           this.error = error;
           this.loading = false;
         });
+  }
+
+  seedData(): void {
+    this.seed.seed()
+      .subscribe()
   }
 }
