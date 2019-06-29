@@ -8,6 +8,7 @@ import { NavComponent, LoginComponent, AppComponent } from './components';
 import { HomeComponent } from './components/home/home.component'
 import { TodoService, AuthService } from './services';
 import { JWTInterceptor } from './helpers/jwt.interceptor';
+import { SeedService } from './services/seed.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,10 @@ import { JWTInterceptor } from './helpers/jwt.interceptor';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true },
-    TodoService, AuthService,],
+    TodoService,
+    AuthService,
+    SeedService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
