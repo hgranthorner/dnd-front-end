@@ -12,9 +12,8 @@ import {
   RoomListComponent,
   RoomListItemComponent,
 } from './components';
-import { TodoService, AuthService, ApiService } from './services';
+import { AuthService, ApiService, SeedService } from './services';
 import { JWTInterceptor } from './helpers/jwt.interceptor';
-import { SeedService } from './services/seed.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { SeedService } from './services/seed.service';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JWTInterceptor, multi: true },
-    TodoService,
     AuthService,
     SeedService,
     ApiService

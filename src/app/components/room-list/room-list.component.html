@@ -5,7 +5,10 @@
   <section class="main list-group">
     <li class="list-group-item room" *ngFor="let room of rooms">
       <room-list-item class="room-description" [room]="room" (roomSelector)="selectRoom($event)"></room-list-item>
-      <div class="preview-room" *ngIf="room.id === selectedId"></div>
+      <div class="preview-room" *ngIf="room.id === selectedId">
+        <button>Enter as DM</button>
+        <button>Enter as Player</button>
+      </div>
     </li>
   </section>
 </section>
