@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Room } from '@app/models';
 import { ApiService } from '@app/services';
-import { SeedService } from '@app/services/seed.service';
+import { SeedService } from '@app/services/seed/seed.service';
 
 @Component({
   selector: 'app-room-list',

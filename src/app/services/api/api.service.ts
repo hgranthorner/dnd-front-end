@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Room } from '@app/models';
+import { Room, Character } from '@app/models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -21,5 +21,18 @@ export class ApiService {
     const path = `${this.url}rooms`
 
     return this.http.get<Room[]>(path)
+  }
+
+  getCharacter(characterId: number): Observable<Character> {
+    const path = `${this.url}characters/${characterId}`
+
+    return this.http.get<Character>(path)
+  }
+
+
+  getCharacters(userId: number): Observable<Character[]> {
+    const path = `${this.url}characters/${userId}`
+
+    return this.http.get<Character[]>(path)
   }
 }

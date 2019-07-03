@@ -6,3 +6,6 @@ export * from './home/home.component'
 // Room list
 export * from './room-list/room-list-item/room-list-item.component'
 export * from './room-list/room-list.component'
+
+// Character list
+export * from './character-list/character-list.component'

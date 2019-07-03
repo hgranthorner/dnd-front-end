@@ -11,6 +11,7 @@ import {
   HomeComponent,
   RoomListComponent,
   RoomListItemComponent,
+  CharacterListComponent
 } from './components';
 import { AuthService, ApiService, SeedService } from './services';
 import { JWTInterceptor } from './helpers/jwt.interceptor';
@@ -23,6 +24,7 @@ import { JWTInterceptor } from './helpers/jwt.interceptor';
     HomeComponent,
     RoomListComponent,
     RoomListItemComponent,
+    CharacterListComponent,
   ],
   imports: [
     BrowserModule,
