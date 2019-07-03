@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { Room } from '@app/models';
-import { EventEmitter } from 'events';
 
 @Component({
   selector: 'room-list-item',
@@ -9,9 +8,9 @@ import { EventEmitter } from 'events';
 })
 export class RoomListItemComponent {
   @Input() room: Room
-  @Output() roomId = new EventEmitter<number>()
+  @Output() roomSelector = new EventEmitter<number>()
 
   selectRoom(id: number) {
-    this.roomId.emit(id)
+    this.roomSelector.emit(id)
   }
 }

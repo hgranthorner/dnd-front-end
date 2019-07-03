@@ -4,14 +4,8 @@
   </header>
   <section class="main list-group">
     <li class="list-group-item room" *ngFor="let room of rooms">
-      <room-list-item [room]="room" (selectedRoom)="selectRoom($event)"></room-list-item>
-      <div class="room-description">
-        <img src="" alt="">
-        <h1>{{ room.name }}</h1>
-        <p class="room-description">{{ room.description }}</p>
-        <button (click)="selectRoom(room.id)">select</button>
-      </div>
-      <div class="preview-room" *ngIf="room.id === selectedId">I'm selected</div>
+      <room-list-item class="room-description" [room]="room" (roomSelector)="selectRoom($event)"></room-list-item>
+      <div class="preview-room" *ngIf="room.id === selectedId"></div>
     </li>
   </section>
 </section>

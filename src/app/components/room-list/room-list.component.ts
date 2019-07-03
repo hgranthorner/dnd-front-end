@@ -25,7 +25,7 @@ export class RoomListComponent implements OnInit {
 
   seedRooms() {
     this.seed.seedRooms()
-      .subscribe(() => console.log('Received room'))
+      .subscribe()
   }
 
   selectRoom(id: number) {

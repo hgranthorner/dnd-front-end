@@ -10,7 +10,7 @@ import {
   AppComponent,
   HomeComponent,
   RoomListComponent,
-  RoomListItemComponent
+  RoomListItemComponent,
 } from './components';
 import { TodoService, AuthService, ApiService } from './services';
 import { JWTInterceptor } from './helpers/jwt.interceptor';
@@ -23,7 +23,7 @@ import { SeedService } from './services/seed.service';
     LoginComponent,
     HomeComponent,
     RoomListComponent,
-    RoomListItemComponent
+    RoomListItemComponent,
   ],
   imports: [
     BrowserModule,
