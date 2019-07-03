@@ -4,12 +4,17 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module'
-import { NavComponent, LoginComponent, AppComponent } from './components';
-import { HomeComponent } from './components/home/home.component'
+import {
+  NavComponent,
+  LoginComponent,
+  AppComponent,
+  HomeComponent,
+  RoomListComponent,
+  RoomListItemComponent
+} from './components';
 import { TodoService, AuthService, ApiService } from './services';
 import { JWTInterceptor } from './helpers/jwt.interceptor';
 import { SeedService } from './services/seed.service';
-import { RoomListComponent } from './components/room-list/room-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,8 @@ import { RoomListComponent } from './components/room-list/room-list.component';
     NavComponent,
     LoginComponent,
     HomeComponent,
-    RoomListComponent
+    RoomListComponent,
+    RoomListItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,17 @@
-<section class="container">
-  <header class="header"></header>
-  <section class="main">
-    <div *ngFor="let room of rooms">
-      <article class="room">
+<section class="room-list-container">
+  <header class="header">
+    <button (click)="seedRooms()">Seed rooms</button>
+  </header>
+  <section class="main list-group">
+    <li class="list-group-item room" *ngFor="let room of rooms">
+      <room-list-item [room]="room" (selectedRoom)="selectRoom($event)"></room-list-item>
+      <div class="room-description">
         <img src="" alt="">
-        <div class="room-description">{{ room.Name }}</div>
-      </article>
-      <div class="preview" *ngIf="room.id === selectedId">I'm selected</div>
-    </div>
+        <h1>{{ room.name }}</h1>
+        <p class="room-description">{{ room.description }}</p>
+        <button (click)="selectRoom(room.id)">select</button>
+      </div>
+      <div class="preview-room" *ngIf="room.id === selectedId">I'm selected</div>
+    </li>
   </section>
 </section>

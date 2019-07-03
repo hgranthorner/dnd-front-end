@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Room } from '@app/models';
 import { ApiService } from '@app/services';
+import { SeedService } from '@app/services/seed.service';
 
 @Component({
   selector: 'app-room-list',
@@ -11,7 +12,9 @@ export class RoomListComponent implements OnInit {
   rooms: Room[]
   selectedId: number
 
-  constructor(private readonly api: ApiService) { }
+  constructor(
+    private readonly api: ApiService,
+    private readonly seed: SeedService) { }
 
   ngOnInit() {
     this.api.getRooms()
@@ -20,4 +23,16 @@ export class RoomListComponent implements OnInit {
       })
   }
 
+  seedRooms() {
+    this.seed.seedRooms()
+      .subscribe(() => console.log('Received room'))
+  }
+
+  selectRoom(id: number) {
+    if (this.selectedId) {
+      this.selectedId = 0
+    } else {
+      this.selectedId = id
+    }
+  }
 }
